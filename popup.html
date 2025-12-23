@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broken Link Checker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Broken Link Checker</h1>
+
+    <div id="idle-state" class="state">
+      <p>Click the button to scan this page for broken links.</p>
+      <button id="scan-btn" class="btn-primary">Scan Page</button>
+    </div>
+
+    <div id="scanning-state" class="state hidden">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-text">Checking links...</p>
+      </div>
+    </div>
+
+    <div id="results-state" class="state hidden">
+      <div class="summary">
+        <div class="stat">
+          <span class="stat-value" id="total-links">0</span>
+          <span class="stat-label">Total Links</span>
+        </div>
+        <div class="stat stat-broken">
+          <span class="stat-value" id="broken-count">0</span>
+          <span class="stat-label">Broken</span>
+        </div>
+        <div class="stat stat-uncertain">
+          <span class="stat-value" id="uncertain-count">0</span>
+          <span class="stat-label">Uncertain</span>
+        </div>
+      </div>
+
+      <div id="broken-list" class="link-list hidden">
+        <h2>Broken Links</h2>
+        <ul id="broken-links"></ul>
+      </div>
+
+      <div id="uncertain-list" class="link-list hidden">
+        <h2>Uncertain Links</h2>
+        <p class="help-text">These links couldn't be verified (possibly due to CORS restrictions).</p>
+        <ul id="uncertain-links"></ul>
+      </div>
+
+      <button id="rescan-btn" class="btn-secondary">Scan Again</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
