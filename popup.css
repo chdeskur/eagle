@@ -14,15 +14,16 @@ body {
 
 .container {
   width: 320px;
-  padding: 16px;
+  padding: 20px;
 }
 
 h1 {
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #09090b;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 h2 {
@@ -36,6 +37,19 @@ h2 {
 
 .hidden {
   display: none !important;
+}
+
+/* Idle state */
+#idle-state {
+  padding-top: 8px;
+}
+
+#idle-state p {
+  color: #71717a;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
 /* Buttons */
